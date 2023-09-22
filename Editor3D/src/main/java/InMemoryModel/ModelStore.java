@@ -3,6 +3,9 @@ import ModelElements.Camera;
 import ModelElements.Flash;
 import ModelElements.PoligonalModel;
 import ModelElements.Scene;
+import Stuff.Point3D;
+import Stuff.Poligon;
+import Stuff.Texture;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,10 +21,12 @@ public class ModelStore implements IModelChanger{
         this.scenes = new ArrayList<Scene>();
 
         //добавляем по одному элементу каждого вида в список
-        models.add(new PoligonalModel());
+        models.add(new PoligonalModel(new ArrayList<Texture>()));
         cameras.add(new Camera());
         flashes.add(new Flash());
-        scenes.add(new Scene());
+        scenes.add(new Scene(new ArrayList<PoligonalModel>(),
+                new ArrayList<Flash>(),
+                new ArrayList<Camera>()));
     }
 // определяем публичные элементы, в данном случае они все являются списками (1...*)
     public List<PoligonalModel> models;
