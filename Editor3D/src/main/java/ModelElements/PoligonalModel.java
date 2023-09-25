@@ -1,5 +1,6 @@
 package ModelElements;
 
+import Stuff.Point3D;
 import Stuff.Poligon;
 import Stuff.Texture;
 
@@ -13,7 +14,7 @@ public class PoligonalModel {
         //добавили в конструктор внутренний компонент (композиция)
         this.poligons = new ArrayList<Poligon>();
         // создали экземпляр
-        poligons.add(new Poligon());
+        poligons.add(new Poligon(new Point3D()));
     }
 
     public List<Poligon> poligons;

@@ -24,9 +24,11 @@ public class ModelStore implements IModelChanger{
         models.add(new PoligonalModel(new ArrayList<Texture>()));
         cameras.add(new Camera());
         flashes.add(new Flash());
-        scenes.add(new Scene(new ArrayList<PoligonalModel>(),
-                new ArrayList<Flash>(),
-                new ArrayList<Camera>()));
+        try {
+            scenes.add(new Scene(0, (ArrayList<PoligonalModel>) models, (ArrayList<Flash>) flashes, (ArrayList<Camera>) cameras));
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 // определяем публичные элементы, в данном случае они все являются списками (1...*)
     public List<PoligonalModel> models;
