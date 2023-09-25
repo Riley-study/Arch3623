@@ -1,7 +1,4 @@
-import Fabric.GemGenerator;
-import Fabric.GoldGenerator;
-import Fabric.ItemGenerator;
-import Fabric.SilverGnerator;
+import Fabric.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,26 +8,25 @@ import java.util.concurrent.ThreadLocalRandom;
 public class main {
     public static void main(String[] args) {
         ItemGenerator f1 = new GemGenerator();
-        f1.openReward();
         ItemGenerator f2 = new GoldGenerator();
-        f2.openReward();
         ItemGenerator f3 = new SilverGnerator();
-        f3.openReward();
+        ItemGenerator f4 = new BonusLifeGenerator();
+        ItemGenerator f5 = new BronzeGenerator();
+        ItemGenerator f6 = new FakeGenerator();
+        ItemGenerator f7 = new EnergyGenerator();
+        ItemGenerator f8 = new MalachiteGenerator();
+
         List<ItemGenerator> itemGeneratorList = new ArrayList<>();
         itemGeneratorList.add(f1);
         itemGeneratorList.add(f2);
         itemGeneratorList.add(f3);
+        itemGeneratorList.add(f4);
+        itemGeneratorList.add(f5);
+        itemGeneratorList.add(f6);
+        itemGeneratorList.add(f7);
+        itemGeneratorList.add(f8);
 
         Random rnd = ThreadLocalRandom.current();
-
-        int gemCounter = 0;
-        int goldCounter = 0;
-
-        for (int i = 0; i < 20; i++) {
-            // случайным образом достаем из списка сундучок и открываем его (10 раз)
-            itemGeneratorList.get(rnd.nextInt(3)).openReward();
-
-        }
-
     }
+
 }
