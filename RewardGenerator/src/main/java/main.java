@@ -27,6 +27,59 @@ public class main {
         itemGeneratorList.add(f8);
 
         Random rnd = ThreadLocalRandom.current();
+
+        int gemCounter = 0;
+        int goldCounter = 0;
+        int maxCount = 30;
+        int currentCount = 1;
+        int currentIndex;
+        ArrayList<Integer> listOfIndex = new ArrayList<>();
+
+        while (currentCount < maxCount) {
+            // случайным образом достаем из списка сундучок и формируем список, где нулевой элемент может встретиться
+            // только один раз, а первый только три раза
+            currentIndex = rnd.nextInt(8);
+
+
+            if (currentIndex == 0 && gemCounter == 0) {
+                gemCounter++;
+                listOfIndex.add(currentIndex);
+            }
+            if (currentIndex == 0 && gemCounter > 0) {
+                gemCounter++;
+                currentCount--;
+            }
+
+            if (currentIndex == 1 && goldCounter < 3) {
+                goldCounter++;
+                listOfIndex.add(currentIndex);
+            }
+            if (currentIndex == 1 && goldCounter >= 3) {
+                goldCounter++;
+                currentCount--;
+            }
+
+            if (currentIndex > 1) {
+                listOfIndex.add(currentIndex);
+            }
+            currentCount++;
+        }
+
+
+        for (int i = 0; i < listOfIndex.size(); i++) {
+            itemGeneratorList.get(listOfIndex.get(i)).openReward();
+        }
+        // Для удобства проверки распечатаем индексы, видим, что генератор выдает золото и алмазы чаше, но в список
+        // попадает не больше, чем 1 и 3 соответственно
+        for (int i = 0; i < listOfIndex.size(); i++) {
+            System.out.print(listOfIndex.get(i));
+        }
+        System.out.println("\n------------------------------");
+        System.out.println("\n gemCounter =" + gemCounter);
+        System.out.println("\n goldCounter =" + goldCounter);
+        System.out.println("\n currentCount =" + currentCount);
+
+
     }
 
 }
