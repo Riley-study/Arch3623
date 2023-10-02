@@ -1,8 +1,8 @@
-package Core;
+package HomeWork4.src.Core;
 
-import Interfaces.ICustomer;
-import Models.Ticket;
-import Models.User;
+import HomeWork4.src.Interfaces.ICustomer;
+import HomeWork4.src.Models.Ticket;
+import HomeWork4.src.Models.User;
 
 import java.util.ArrayList;
 import java.util.Date;

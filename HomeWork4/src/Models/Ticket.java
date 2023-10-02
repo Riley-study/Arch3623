@@ -1,4 +1,4 @@
-package Models;
+package HomeWork4.src.Models;
 
 import java.util.Date;
 
@@ -6,7 +6,11 @@ import java.util.Date;
  * Модель билета
  */
 public class Ticket{
-
+    int routeNumber;
+    int place;
+    int price;
+    Date date;
+    boolean isValid;
 
 
     public Ticket(int routeNumber, int place, int price, Date date, boolean isValid) {
@@ -63,5 +67,25 @@ public class Ticket{
             return true;
         }
         return false;
+    }
+
+    public int getRouteNumber() {
+        return routeNumber;
+    }
+
+    public int getPlace() {
+        return place;
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public boolean getValid() {
+        return isValid;
     }
 }

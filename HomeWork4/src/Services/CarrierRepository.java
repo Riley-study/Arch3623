@@ -1,7 +1,7 @@
-package Services;
+package HomeWork4.src.Services;
 
-import Interfaces.ICarrierRepo;
-import Models.Carrier;
+import HomeWork4.src.Interfaces.ICarrierRepo;
+import HomeWork4.src.Models.Carrier;
 
 import java.util.ArrayList;
 import java.util.List;

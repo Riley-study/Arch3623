@@ -1,7 +1,7 @@
-package Services;
+package HomeWork4.src.Services;
 
-import Interfaces.IUserRepo;
-import Models.User;
+import HomeWork4.src.Interfaces.IUserRepo;
+import HomeWork4.src.Models.User;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,8 +1,8 @@
-package ClientApplication;
+package HomeWork4.src.ClientApplication;
 
-import Core.Customer;
-import Interfaces.ICustomer;
-import Models.Ticket;
+import HomeWork4.src.Core.Customer;
+import HomeWork4.src.Interfaces.ICustomer;
+import HomeWork4.src.Models.Ticket;
 
 import java.util.Date;
 import java.util.List;

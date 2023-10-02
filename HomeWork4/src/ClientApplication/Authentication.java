@@ -1,7 +1,7 @@
-package ClientApplication;
+package HomeWork4.src.ClientApplication;
 
-import Core.UserProvider;
-import Models.User;
+import HomeWork4.src.Core.UserProvider;
+import HomeWork4.src.Models.User;
 
 /**
  * Класс аутентификации пользователя

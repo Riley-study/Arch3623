@@ -1,6 +1,6 @@
-package Interfaces;
+package HomeWork4.src.Interfaces;
 
-import Models.Ticket;
+import HomeWork4.src.Models.Ticket;
 
 import java.util.List;
 

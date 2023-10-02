@@ -1,6 +1,6 @@
-package Interfaces;
+package HomeWork4.src.Interfaces;
 
-import Models.User;
+import HomeWork4.src.Models.User;
 
 import java.util.List;
 

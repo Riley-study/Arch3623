@@ -1,4 +1,4 @@
-package Models;
+package HomeWork4.src.Models;
 
 import java.util.Objects;
 
@@ -6,7 +6,10 @@ import java.util.Objects;
  * Модель пользователя
  */
 public class User {
-
+    int id;
+    String userName;
+    int hashPassword;
+    long cardNumber;
 
 
     public User(int id, String userName, int hashPassword, long cardNumber) {
@@ -41,5 +44,22 @@ public class User {
     @Override
     public int hashCode() {
         return Objects.hash(id, userName, hashPassword, cardNumber);
+    }
+
+
+    public int getId() {
+        return id;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public int getHashPassword() {
+        return hashPassword;
+    }
+
+    public long getCardNumber() {
+        return cardNumber;
     }
 }
