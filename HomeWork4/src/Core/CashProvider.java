@@ -1,12 +1,14 @@
-package Core;
+package HomeWork4.src.Core;
 
-import Interfaces.ICarrierRepo;
-import Interfaces.ICashRepo;
-import Models.Carrier;
-import Models.Ticket;
-import Models.User;
-import Services.CarrierRepository;
-import Services.CashRepository;
+import HomeWork4.src.Interfaces.ICarrierRepo;
+import HomeWork4.src.Interfaces.ICashRepo;
+import HomeWork4.src.Models.BankAccount;
+import HomeWork4.src.Models.Carrier;
+import HomeWork4.src.Models.Ticket;
+import HomeWork4.src.Models.User;
+import HomeWork4.src.Services.CarrierRepository;
+import HomeWork4.src.Services.CashRepository;
+import HomeWork4.src.Services.UserRepository;
 
 /**
  * Класс - провайдер для взаимодействия с банком и базой перевозчиков
@@ -14,7 +16,8 @@ import Services.CashRepository;
 public class CashProvider {
 
 
-
+CarrierRepository carrierRepository;
+CashRepository cashRepository;
 
 
     /**
@@ -27,6 +30,16 @@ public class CashProvider {
         this.cashRepository = CashRepository.getCashRepository();
     }
 
+    public CarrierRepository getCarrierRepository() {
+        return carrierRepository;
+    }
+
+    public CashRepository getCashRepository() {
+        return cashRepository;
+    }
+
+
+
     /**
      * Метод покупки билета
      *
@@ -36,12 +49,21 @@ public class CashProvider {
      */
     // подсказка  Carrier carrier = carrierRepository.read(1);
     // подсказка  return cashRepository.transaction(ticket.getPrice(), cardNumber, carrier.getCardNumber());
-
+    public boolean buy(Ticket ticket) throws RuntimeException {
+        Carrier carrier = carrierRepository.read(1);
+        UserRepository userRepository = UserRepository.getClientRepository();
+        long cardNumber = userRepository.read(1).getCardNumber();
+        return cashRepository.transaction(ticket.getPrice(), cardNumber, carrier.getCardNumber());
+    }
 
     /**
      * Метод авторизации клиента. Здесь должно быть реализовано обращение к банку для подтверждения личности клиента.
      *
      * @param client
      */
+    public void authorization(User client) {
+        client.getCardNumber();
+    }
+
 
 }
